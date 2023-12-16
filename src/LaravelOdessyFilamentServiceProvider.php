@@ -6,7 +6,7 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use LaravelOdyssey\Filament\Commands\LaravelOdessyFilamentCommand;
 
-class FilamentServiceProvider extends PackageServiceProvider
+class LaravelOdessyFilamentServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

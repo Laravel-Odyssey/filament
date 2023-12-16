@@ -77,7 +77,7 @@
                 "LaravelOdyssey\\Filament\\FilamentServiceProvider"
             ],
             "aliases": {
-                "Filament": "LaravelOdyssey\\Filament\\Facades\\Filament"
+                "LaravelOdysseyFilament": "LaravelOdyssey\\Filament\\Facades\\Filament"
             }
         }
     },
