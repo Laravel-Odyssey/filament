@@ -9,20 +9,11 @@ use Illuminate\Database\Eloquent\Builder;
 
 class FromUntilDateRangeFilter extends Filter
 {
-    public static function make(?string $name = null): static
+    protected function setUp(): void
     {
-        $filterClass = static::class;
+        parent::setUp();
 
-        $name ??= static::getDefaultName();
-
-        if (blank($name)) {
-            throw new Exception("Filter of class [$filterClass] must have a unique name, passed to the [make()] method.");
-        }
-
-        $static = app($filterClass, ['name' => $name]);
-        $static->configure();
-
-        self::form([
+        $this->form([
             DatePicker::make('from'),
             DatePicker::make('until'),
         ])
@@ -37,6 +28,34 @@ class FromUntilDateRangeFilter extends Filter
                         fn (Builder $query, $date): Builder => $query->whereDate($name, '<=', $date),
                     );
             });
+
+        $this->indicateUsing(function (array $state): array {
+            if (! ($state['isActive'] ?? false)) {
+                return [];
+            }
+
+            $indicator = $this->getIndicator();
+
+            if (! $indicator instanceof Indicator) {
+                $indicator = Indicator::make($indicator);
+            }
+
+            return [$indicator];
+        });
+    }
+
+    public static function make(?string $name = null): static
+    {
+        $filterClass = static::class;
+
+        $name ??= static::getDefaultName();
+
+        if (blank($name)) {
+            throw new Exception("Filter of class [$filterClass] must have a unique name, passed to the [make()] method.");
+        }
+
+        $static = app($filterClass, ['name' => $name]);
+        $static->configure();
 
         return $static;
     }
