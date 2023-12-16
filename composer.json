@@ -74,7 +74,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelOdyssey\\Filament\\FilamentServiceProvider"
+                "LaravelOdyssey\\Filament\\LaravelOdessyFilamentServiceProvider"
             ],
             "aliases": {
                 "LaravelOdysseyFilament": "LaravelOdyssey\\Filament\\Facades\\Filament"
