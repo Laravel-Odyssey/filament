@@ -4,8 +4,8 @@ namespace LaravelOdyssey\Filament\Filters;
 
 use Exception;
 use Filament\Forms\Components\DatePicker;
-use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Filters\Filter;
+use Illuminate\Database\Eloquent\Builder;
 
 class FromUntilDateRangeFilter extends Filter
 {

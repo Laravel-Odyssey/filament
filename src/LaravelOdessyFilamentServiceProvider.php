@@ -2,9 +2,9 @@
 
 namespace LaravelOdyssey\Filament;
 
+use LaravelOdyssey\Filament\Commands\LaravelOdessyFilamentCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LaravelOdyssey\Filament\Commands\LaravelOdessyFilamentCommand;
 
 class LaravelOdessyFilamentServiceProvider extends PackageServiceProvider
 {
