@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace LaravelOdyssey\Filament\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelOdessyFilamentCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'Filament';
 
     public $description = 'My command';
 
