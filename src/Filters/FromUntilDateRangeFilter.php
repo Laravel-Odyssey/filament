@@ -17,15 +17,15 @@ class FromUntilDateRangeFilter extends Filter
             DatePicker::make('from'),
             DatePicker::make('until'),
         ])
-            ->query(function (Builder $query, array $data) use ($name): Builder {
+            ->query(function (Builder $query, array $data): Builder {
                 return $query
                     ->when(
                         $data['from'],
-                        fn (Builder $query, $date): Builder => $query->whereDate($name, '>=', $date),
+                        fn (Builder $query, $date): Builder => $query->whereDate($this->getName(), '>=', $date),
                     )
                     ->when(
                         $data['until'],
-                        fn (Builder $query, $date): Builder => $query->whereDate($name, '<=', $date),
+                        fn (Builder $query, $date): Builder => $query->whereDate($this->getName(), '<=', $date),
                     );
             });
 
